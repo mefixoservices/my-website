@@ -1,60 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mefixo Home Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#f5f5f5; }
-    header { background:#0b5ed7; color:#fff; padding:20px; text-align:center; }
-    section { padding:20px; background:#fff; margin:15px; border-radius:8px; }
-    h2 { color:#0b5ed7; }
-    .btn {
-      display:inline-block; padding:12px 20px;
-      background:#25D366; color:#fff;
-      text-decoration:none; border-radius:6px;
-      font-weight:bold;
-    }
-    footer { text-align:center; padding:15px; color:#555; }
-  </style>
+<meta charset="UTF-8">
+<title>Mefixo – Home Services in Surat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#0b3c5d;
+  --accent:#25D366;
+  --light:#f4f7fb;
+}
+
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+
+body{
+  margin:0;
+  background:var(--light);
+  color:#222;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0b3c5d,#1d6fa5);
+  color:#fff;
+  padding:70px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:18px;
+  opacity:0.95;
+}
+
+.hero .cta{
+  margin-top:25px;
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:14px 26px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.section h2{
+  text-align:center;
+  color:var(--primary);
+  margin-bottom:35px;
+  font-size:28px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3{
+  margin-top:15px;
+  color:var(--primary);
+}
+
+/* WHY */
+.why{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.why div{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.07);
+}
+
+/* CTA STRIP */
+.cta-strip{
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.cta-strip a{
+  background:var(--accent);
+  color:#fff;
+  padding:14px 26px;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:15px;
+}
+
+/* FOOTER */
+footer{
+  background:#081f2f;
+  color:#ccc;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{font-size:28px;}
+}
+</style>
 </head>
+
 <body>
 
-<header>
-<h1>Mefixo – On-Demand Home Services</h1>
-<p>
-Trusted Services at Your Doorstep<br>
-<b>વિશ્વસનીય હોમ સર્વિસ – તમારા ઘરના દરવાજે</b>
-</p>
-  <a class="btn" href="https://wa.me/919979577092">Book on WhatsApp</a>
-</header>
-
-<section>
-<h2>Our Services | અમારી સેવાઓ</h2>
-<ul>
-  <li>Plumber – પ્લમ્બર</li>
-  <li>Electrician – ઇલેક્ટ્રિશિયન</li>
-  <li>Carpenter – કારપેન્ટર</li>
-  <li>Home Cleaning – ઘર સફાઈ</li>
-</ul>
+<!-- HERO -->
+<section class="hero">
+  <h1>Mefixo – Home Services in Surat</h1>
+  <p>
+    Trusted Professionals at Your Doorstep<br>
+    <b>વિશ્વસનીય હોમ સર્વિસ – સુરત</b>
+  </p>
+  <a class="cta" href="https://wa.me/919979577092">Book on WhatsApp</a>
 </section>
 
-<section>
- <h2>Why Choose Us | અમને કેમ પસંદ કરો</h2>
-<p>
-✔ Verified Professionals – અનુભવી કામદારો<br>
-✔ On-Time Service – સમયસર સર્વિસ<br>
-✔ Transparent Pricing – સ્પષ્ટ ભાવ
-</p>
+<!-- SERVICES -->
+<section class="section">
+  <h2>Our Services | અમારી સેવાઓ</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Plumber</h3>
+      <p>Leakage, fittings & repairs<br>પ્લમ્બર સર્વિસ</p>
+    </div>
+    <div class="card">
+      <h3>Electrician</h3>
+      <p>Wiring, lights & fixing<br>ઇલેક્ટ્રિશિયન સર્વિસ</p>
+    </div>
+    <div class="card">
+      <h3>Carpenter</h3>
+      <p>Furniture & wood work<br>કારપેન્ટર સર્વિસ</p>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>Service Area | સર્વિસ વિસ્તાર</h2>
-<p>Surat અને આસપાસના વિસ્તાર</p>
+<!-- WHY -->
+<section class="section">
+  <h2>Why Choose Mefixo | અમને કેમ પસંદ કરો</h2>
+  <div class="why">
+    <div>✔ Verified Professionals<br>અનુભવી કામદારો</div>
+    <div>✔ On-Time Service<br>સમયસર સર્વિસ</div>
+    <div>✔ Transparent Pricing<br>કોઈ છુપા ચાર્જ નહીં</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <h2>Need Immediate Service in Surat?</h2>
+  <p>Call or WhatsApp us now</p>
+  <a href="https://wa.me/919979577092">Chat on WhatsApp</a>
 </section>
 
 <footer>
-  © 2026 Mefixo Home Services
+  © 2026 Mefixo Home Services • Surat
 </footer>
 
 </body>
