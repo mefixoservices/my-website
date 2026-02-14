@@ -3,172 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mefixo – Home Services in Surat</title>
+<title>Mefixo | Home Services in Surat</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: #f4f6f8;
-  color: #111;
+body{
+background:#f5f7fa;
+color:#111;
 }
 
-/* ================= NAVBAR ================= */
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  transition: all 0.4s ease;
-  z-index: 1000;
+html{
+scroll-behavior:smooth;
 }
 
-.navbar.shrink {
-  padding: 10px 8%;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
-/* ===== BIG PROFESSIONAL LOGO ===== */
-
-.logo {
-  height: 85px;   /* Logo size increased */
-  transition: all 0.4s ease;
+.logo img{
+height:55px;
 }
 
-.navbar.shrink .logo {
-  height: 60px;
+nav ul{
+display:flex;
+list-style:none;
+gap:40px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  margin-left: 35px;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s;
+nav ul li a{
+text-decoration:none;
+color:#111;
+font-weight:500;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #e60000;
-  left: 0;
-  bottom: -5px;
-  transition: 0.3s;
+nav ul li a:hover{
+color:#e60000;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:0 8%;
+margin-top:80px;
 }
 
-/* ================= HERO ================= */
-
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10%;
-  text-align: center;
-  background: linear-gradient(to right, #ffffff, #eef1f4);
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
 }
 
-.hero h1 {
-  font-size: 52px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.hero p{
+font-size:18px;
+color:#666;
+margin-bottom:30px;
 }
 
-.hero p {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 35px;
+.hero a{
+background:#e60000;
+color:white;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
-.cta {
-  background: #e60000;
-  color: white;
-  padding: 16px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.hero a:hover{
+background:black;
 }
 
-.cta:hover {
-  background: #c40000;
-  transform: translateY(-3px);
+/* SERVICES */
+
+.section{
+padding:100px 8%;
+text-align:center;
 }
 
-/* ================= SERVICES ================= */
-
-.services {
-  padding: 120px 8%;
-  background: white;
-  text-align: center;
+.section h2{
+font-size:36px;
+margin-bottom:60px;
 }
 
-.services h2 {
-  font-size: 38px;
-  margin-bottom: 70px;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 40px;
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
 }
 
-.service-card {
-  background: #f4f6f8;
-  padding: 45px 30px;
-  border-radius: 20px;
-  transition: 0.4s;
+.card:hover{
+transform:translateY(-10px);
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+.card i{
+font-size:40px;
+color:#e60000;
+margin-bottom:20px;
 }
 
-.service-card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
+/* TRUST */
+
+.trust{
+background:#fff;
 }
 
-.service-card p {
-  color: #555;
+/* REVIEWS */
+
+.review{
+background:#f4f6f8;
+padding:30px;
+border-radius:15px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
-.footer {
-  padding: 40px;
-  background: #111;
-  color: white;
-  text-align: center;
+footer{
+background:#111;
+color:white;
+padding:60px 8%;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+}
+
+footer a:hover{
+color:#e60000;
+}
+
+.social i{
+font-size:20px;
+margin-right:15px;
+cursor:pointer;
+}
+
+.copy{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:20px;
 }
 
 </style>
@@ -176,57 +190,131 @@ html {
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <img src="./images/logo.png" class="logo" alt="Mefixo Logo">
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
+<nav>
+<div class="logo">
+<img src="images/logo.png" alt="Mefixo Logo">
 </div>
 
-<!-- HERO -->
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
 <section class="hero" id="home">
-  <h1>Trusted Home Services in Surat</h1>
-  <p>Professional Plumber, Electrician & Carpenter at your doorstep.</p>
-  <a class="cta" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp</a>
+<h1>Trusted Home Services in Surat</h1>
+<p>Professional Plumber, Electrician & Carpenter at your doorstep.</p>
+<a href="https://wa.me/919999999999">Book on WhatsApp</a>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Plumber</h3>
-      <p>Leak repair, fittings & complete plumbing solutions.</p>
-    </div>
-    <div class="service-card">
-      <h3>Electrician</h3>
-      <p>Wiring, installations & maintenance services.</p>
-    </div>
-    <div class="service-card">
-      <h3>Carpenter</h3>
-      <p>Furniture repair & custom wood work.</p>
-    </div>
-  </div>
-</section>
+<section class="section" id="services">
+<h2>Our Services</h2>
 
-<!-- FOOTER -->
-<div class="footer" id="contact">
-  © 2026 Mefixo Home Services | Surat
+<div class="services">
+
+<div class="card">
+<i class="fas fa-wrench"></i>
+<h3>Plumber</h3>
+<p>Leak repair, fittings, bathroom & kitchen work.</p>
 </div>
 
-<script>
-window.addEventListener("scroll", function() {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 60) {
-    navbar.classList.add("shrink");
-  } else {
-    navbar.classList.remove("shrink");
-  }
-});
-</script>
+<div class="card">
+<i class="fas fa-bolt"></i>
+<h3>Electrician</h3>
+<p>Wiring, switches, fan & light installation.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-hammer"></i>
+<h3>Carpenter</h3>
+<p>Furniture repair, door fitting & custom work.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section trust">
+<h2>Why Choose Mefixo?</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>500+ Happy Customers</h3>
+<p>Trusted by families across Surat.</p>
+</div>
+
+<div class="card">
+<h3>Verified Technicians</h3>
+<p>Background checked professionals.</p>
+</div>
+
+<div class="card">
+<h3>Same Day Service</h3>
+<p>Quick doorstep support.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>What Our Customers Say</h2>
+
+<div class="services">
+
+<div class="review">
+<p>"Very professional plumber. Highly recommended!"</p>
+<h4>- Raj Patel</h4>
+</div>
+
+<div class="review">
+<p>"Electrician arrived within 1 hour. Superb service."</p>
+<h4>- Mehul Shah</h4>
+</div>
+
+<div class="review">
+<p>"Carpenter work was clean and perfect."</p>
+<h4>- Jay Mehta</h4>
+</div>
+
+</div>
+</section>
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+<h3>Mefixo</h3>
+<p>Trusted Home Services in Surat.</p>
+<p>Phone: +91 99999 99999</p>
+<p>Email: support@mefixo.com</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="#home">Home</a></p>
+<p><a href="#services">Services</a></p>
+<p><a href="#contact">Contact</a></p>
+</div>
+
+<div>
+<h3>Follow Us</h3>
+<div class="social">
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 Mefixo | All Rights Reserved
+</div>
+
+</footer>
 
 </body>
 </html>
