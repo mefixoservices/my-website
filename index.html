@@ -17,24 +17,21 @@
 }
 
 body{
-  background:#ffffff;
+  background:#fff;
   color:#111;
   cursor:none;
   overflow-x:hidden;
 }
 
-html{scroll-behavior:smooth}
-
-/* CUSTOM CURSOR */
+/* RED CURSOR */
 .cursor{
   position:fixed;
   width:14px;
   height:14px;
-  background:#111;
+  background:red;
   border-radius:50%;
   pointer-events:none;
   transform:translate(-50%,-50%);
-  transition:0.08s linear;
   z-index:9999;
 }
 
@@ -46,18 +43,30 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 8%;
+  padding:20px 8%;
   background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
+  box-shadow:0 5px 25px rgba(0,0,0,0.05);
   z-index:1000;
-  box-shadow:0 2px 20px rgba(0,0,0,0.05);
 }
 
 .logo img{
-  height:75px;
+  height:95px;   /* Bigger logo */
 }
 
-/* HERO WITH STRONGER GRADIENT */
+nav ul{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+}
+
+/* HERO RAINBOW GRADIENT */
 .hero{
   height:100vh;
   display:flex;
@@ -66,40 +75,42 @@ nav{
   align-items:center;
   text-align:center;
   padding:0 10%;
-  background:linear-gradient(135deg,#ffffff,#eef2f7,#e6edf5,#ffffff);
-  background-size:300% 300%;
-  animation:gradientMove 10s ease infinite;
+  background:linear-gradient(270deg,
+  #ff6b6b,
+  #feca57,
+  #1dd1a1,
+  #54a0ff,
+  #5f27cd,
+  #ff6b6b);
+  background-size:1200% 1200%;
+  animation:rainbow 15s ease infinite;
 }
 
-@keyframes gradientMove{
+@keyframes rainbow{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
 .hero h1{
-  font-size:54px;
+  font-size:60px;
+  color:white;
   margin-bottom:20px;
 }
 
 .hero p{
   font-size:18px;
-  color:#555;
-  margin-bottom:35px;
+  color:white;
+  margin-bottom:30px;
 }
 
 .hero a{
-  background:#e60000;
-  color:white;
-  padding:16px 45px;
+  background:white;
+  color:black;
+  padding:15px 40px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  transition:0.3s;
-}
-
-.hero a:hover{
-  transform:translateY(-3px);
 }
 
 /* SECTIONS */
@@ -108,20 +119,12 @@ nav{
   text-align:center;
 }
 
-.section.light{
-  background:#f7f9fc;
-}
-
-.section h2{
-  font-size:38px;
-  margin-bottom:60px;
-}
-
 /* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:40px;
+  margin-top:60px;
 }
 
 .card{
@@ -129,6 +132,7 @@ nav{
   padding:45px;
   border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  cursor:pointer;
   transition:0.4s;
 }
 
@@ -136,52 +140,51 @@ nav{
   transform:translateY(-10px);
 }
 
-/* REVIEWS */
-.review-wrapper{
-  overflow:hidden;
-}
-
-.review-track{
+/* POPUP MODAL */
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   display:flex;
-  gap:30px;
-  animation:scroll 28s linear infinite;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(8px);
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+  z-index:2000;
 }
 
-.review{
-  min-width:260px;
+.modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-content{
   background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
-
-@keyframes scroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-/* FOOTER */
-footer{
-  background:#111;
-  color:white;
-  padding:70px 8%;
+  padding:40px;
+  border-radius:20px;
+  width:400px;
   text-align:center;
+  transform:scale(0.8);
+  transition:0.3s;
 }
 
-.social{
+.modal.active .modal-content{
+  transform:scale(1);
+}
+
+.close-btn{
   margin-top:20px;
-}
-
-.social a{
+  background:red;
   color:white;
-  margin:0 15px;
-  font-size:22px;
-}
-
-.copy{
-  margin-top:40px;
-  color:#777;
-  font-size:14px;
+  padding:8px 20px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
 }
 
 </style>
@@ -195,65 +198,56 @@ footer{
 <div class="logo">
 <img src="images/logo.png">
 </div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
 </nav>
 
 <section class="hero">
 <h1>Trusted Home Services in Surat</h1>
-<p>Professional Plumber, Electrician & Carpenter at your doorstep.</p>
+<p>Professional Plumber, Electrician & Carpenter</p>
 <a href="#">Book Now</a>
 </section>
 
-<section class="section light">
+<section class="section">
 <h2>Our Services</h2>
 
 <div class="services">
-<div class="card"><h3>Plumber</h3></div>
-<div class="card"><h3>Electrician</h3></div>
-<div class="card"><h3>Carpenter</h3></div>
-</div>
-</section>
-
-<section class="section">
-<h2>Customer Reviews</h2>
-
-<div class="review-wrapper">
-<div class="review-track">
-
-<div class="review">Very professional service - Raj</div>
-<div class="review">Best electrician in Surat - Mehul</div>
-<div class="review">Affordable and quick - Jay</div>
-<div class="review">Clean and neat work - Karan</div>
-
-<div class="review">Very professional service - Raj</div>
-<div class="review">Best electrician in Surat - Mehul</div>
-<div class="review">Affordable and quick - Jay</div>
-<div class="review">Clean and neat work - Karan</div>
-
-</div>
+<div class="card" onclick="openModal('Plumber Service')"><h3>Plumber</h3></div>
+<div class="card" onclick="openModal('Electrician Service')"><h3>Electrician</h3></div>
+<div class="card" onclick="openModal('Carpenter Service')"><h3>Carpenter</h3></div>
 </div>
 
 </section>
 
-<footer>
-<h3>Mefixo</h3>
-
-<div class="social">
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3 id="modalText"></h3>
+<p>Professional doorstep service available.</p>
+<button class="close-btn" onclick="closeModal()">Close</button>
 </div>
-
-<div class="copy">
-© 2026 Mefixo | Home Services
 </div>
-</footer>
 
 <script>
+/* RED CURSOR */
 const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove", e=>{
-cursor.style.left = e.clientX + "px";
-cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
 });
+
+/* POPUP */
+function openModal(service){
+  document.getElementById("modalText").innerText = service;
+  document.getElementById("modal").classList.add("active");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
+}
 </script>
 
 </body>
