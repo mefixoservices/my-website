@@ -3,235 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mefixo | Home Services in Surat</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>MEFIXO - Home Services</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#ffffff;color:#111;cursor:none;overflow-x:hidden}
-html{scroll-behavior:smooth}
 
-/* RED CUSTOM CURSOR */
-.cursor{
-position:fixed;
-width:12px;
-height:12px;
-background:#e60000;
-border-radius:50%;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:9999;
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* NAVBAR */
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-background:rgba(255,255,255,0.9);
-backdrop-filter:blur(10px);
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-z-index:1000;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #1a1a1a;
+  color: white;
 }
 
-.logo img{height:100px}
-
-nav ul{
-display:flex;
-gap:40px;
-list-style:none;
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-nav ul li a{
-text-decoration:none;
-color:#111;
-font-weight:600;
-position:relative;
+/* Hero */
+.hero {
+  padding: 80px 40px;
+  background: #f5f5f5;
 }
 
-nav ul li a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-6px;
-width:0%;
-height:2px;
-background:#e60000;
-transition:0.3s;
+.hero h1 {
+  font-size: 40px;
 }
 
-nav ul li a:hover::after{
-width:100%;
+.hero h1 span {
+  color: #e53935;
 }
 
-/* HERO WITH CURSOR INTERACTIVE GLOW */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 10%;
-position:relative;
-overflow:hidden;
-background:#f4f8ff;
+.hero input {
+  padding: 10px;
+  width: 200px;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(
-circle at var(--x,50%) var(--y,50%),
-rgba(230,0,0,0.25) 0%,
-rgba(255,255,255,0.9) 25%,
-transparent 45%
-);
-pointer-events:none;
-transition:background 0.1s;
+.hero button {
+  padding: 10px;
+  background: #e53935;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.hero h1{
-font-size:58px;
-margin-bottom:20px;
-z-index:1;
+.cta a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 20px;
+  background: #e53935;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-.hero p{
-font-size:18px;
-color:#555;
-margin-bottom:35px;
-z-index:1;
+/* Services */
+.services {
+  padding: 50px;
+  text-align: center;
 }
 
-.hero a{
-background:#e60000;
-color:white;
-padding:16px 45px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-z-index:1;
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* SECTIONS */
-.section{
-padding:120px 8%;
-text-align:center;
+.card {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  transition: 0.3s;
 }
 
-.section.light{
-background:#f7f9fc;
+.card:hover {
+  transform: scale(1.05);
 }
 
-.section h2{
-font-size:38px;
-margin-bottom:60px;
+/* How */
+.how {
+  padding: 50px;
+  text-align: center;
 }
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.card{
-background:white;
-padding:45px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.05);
-cursor:pointer;
-transition:0.4s;
+.steps div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
 }
 
-.card:hover{
-transform:translateY(-10px);
+/* Testimonials */
+.testimonials {
+  padding: 50px;
+  background: #f5f5f5;
+  text-align: center;
 }
 
-/* MODAL */
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(6px);
-display:flex;
-justify-content:center;
-align-items:center;
-opacity:0;
-visibility:hidden;
-transition:0.3s;
-z-index:2000;
+.reviews {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.modal.active{
-opacity:1;
-visibility:visible;
+.review {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
 }
 
-.modal-content{
-background:white;
-padding:40px;
-border-radius:20px;
-width:400px;
-text-align:left;
-transform:scale(0.8);
-transition:0.3s;
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
 }
 
-.modal.active .modal-content{
-transform:scale(1);
-}
+/* Mobile Responsive */
+@media(max-width:768px){
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 
-.close-btn{
-margin-top:20px;
-background:#e60000;
-color:white;
-padding:8px 20px;
-border:none;
-border-radius:20px;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:#111;
-color:white;
-padding:80px 8%;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-}
-
-.social a{
-color:white;
-margin-right:15px;
-font-size:20px;
-}
-
-.copy{
-margin-top:40px;
-border-top:1px solid #333;
-padding-top:20px;
-text-align:center;
-font-size:14px;
-color:#777;
+  .steps, .reviews {
+    flex-direction: column;
+  }
 }
 
 </style>
@@ -239,134 +152,78 @@ color:#777;
 
 <body>
 
-<div class="cursor"></div>
+<!-- Navbar -->
+<header class="navbar">
+  <h2>MEFIXO</h2>
+  <nav>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-<nav>
-<div class="logo">
-<img src="images/logo.png">
-</div>
+<!-- Hero -->
+<section class="hero">
+  <h1>Reliable Home Services <span>at Your Doorstep</span></h1>
+  <p>Trusted plumbers, electricians & repair experts in Surat</p>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <input type="text" placeholder="Search service...">
+  <button>Search</button>
 
-<section class="hero" id="home">
-<h1>Trusted Home Services in Surat</h1>
-<p>Professional Plumber, Electrician & Carpenter at your doorstep.</p>
-<a href="#">Book Now</a>
+  <div class="cta">
+    <a href="#">📞 Call Now</a>
+    <a href="#">💬 WhatsApp</a>
+  </div>
 </section>
 
-<section class="section light" id="services">
-<h2>Our Services</h2>
+<!-- Services -->
+<section class="services">
+  <h2>Our Services</h2>
 
-<div class="services">
-<div class="card" onclick="openModal('plumber')"><h3>Plumber</h3></div>
-<div class="card" onclick="openModal('electrician')"><h3>Electrician</h3></div>
-<div class="card" onclick="openModal('carpenter')"><h3>Carpenter</h3></div>
-</div>
+  <div class="service-grid">
+    <div class="card">🚿 Plumbing</div>
+    <div class="card">⚡ Electrician</div>
+    <div class="card">❄️ AC Repair</div>
+    <div class="card">🧼 Cleaning</div>
+    <div class="card">💧 RO Service</div>
+    <div class="card">🎨 Painting</div>
+  </div>
 </section>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<h3 id="modalTitle"></h3>
-<ul id="modalList"></ul>
-<button class="close-btn" onclick="closeModal()">Close</button>
-</div>
-</div>
+<!-- How it works -->
+<section class="how">
+  <h2>How It Works</h2>
 
-<footer id="contact">
+  <div class="steps">
+    <div>1. Choose Service</div>
+    <div>2. Book Slot</div>
+    <div>3. Get Work Done</div>
+  </div>
+</section>
 
-<div class="footer-grid">
-<div>
-<h3>Mefixo</h3>
-<p>Trusted Home Services in Surat</p>
-<p>Phone: +91 99999 99999</p>
-<p>Email: support@mefixo.com</p>
-</div>
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Customers Say</h2>
 
-<div>
-<h3>Quick Links</h3>
-<p><a href="#home" style="color:white;">Home</a></p>
-<p><a href="#services" style="color:white;">Services</a></p>
-<p><a href="#contact" style="color:white;">Contact</a></p>
-</div>
+  <div class="reviews">
+    <div class="review">
+      ⭐⭐⭐⭐⭐
+      <p>Best service in Surat!</p>
+      <h4>- Rahul</h4>
+    </div>
 
-<div>
-<h3>Follow Us</h3>
-<div class="social">
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-facebook"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-</div>
-</div>
-</div>
+    <div class="review">
+      ⭐⭐⭐⭐⭐
+      <p>Very fast and professional.</p>
+      <h4>- Amit</h4>
+    </div>
+  </div>
+</section>
 
-<div class="copy">
-© 2026 Mefixo | All Rights Reserved
-</div>
-
+<!-- Footer -->
+<footer>
+  <p>© 2026 MEFIXO | Surat</p>
 </footer>
-
-<script>
-
-/* RED CURSOR */
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", e=>{
-cursor.style.left = e.clientX + "px";
-cursor.style.top = e.clientY + "px";
-});
-
-/* HERO INTERACTIVE GLOW */
-const hero = document.querySelector(".hero");
-hero.addEventListener("mousemove", e=>{
-const rect = hero.getBoundingClientRect();
-hero.style.setProperty("--x", (e.clientX - rect.left) + "px");
-hero.style.setProperty("--y", (e.clientY - rect.top) + "px");
-});
-
-/* SERVICE DETAILS */
-const servicesData = {
-plumber:[
-"Leak Repair",
-"Bathroom Fittings",
-"Tap & Sink Installation",
-"Pipeline Work"
-],
-electrician:[
-"Fan Installation",
-"Switch Repair",
-"Complete Wiring",
-"Light & Panel Fitting"
-],
-carpenter:[
-"Door Repair",
-"Furniture Fixing",
-"Modular Work",
-"Custom Woodwork"
-]
-};
-
-function openModal(service){
-document.getElementById("modalTitle").innerText = service.toUpperCase();
-const list = document.getElementById("modalList");
-list.innerHTML="";
-servicesData[service].forEach(item=>{
-let li=document.createElement("li");
-li.innerText=item;
-list.appendChild(li);
-});
-document.getElementById("modal").classList.add("active");
-}
-
-function closeModal(){
-document.getElementById("modal").classList.remove("active");
-}
-
-</script>
 
 </body>
 </html>
